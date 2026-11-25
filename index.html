@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yashita & Rishika 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe4f2, #eadcff, #fff0f7);
+    color: #5c3b63;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 35px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 35px rgba(194, 130, 190, 0.2);
+    border: 1px solid white;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: #d76ba5;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #9370aa;
+    margin-bottom: 25px;
+}
+
+.cat {
+    font-size: 100px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.names {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ba68a3;
+}
+
+.message {
+    background: #fff0f8;
+    padding: 22px;
+    border-radius: 20px;
+    margin: 25px 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+button {
+    background: linear-gradient(45deg, #f48fbd, #b994ed);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(180, 110, 180, 0.25);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+#secret {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #c05e9e;
+    font-weight: bold;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.photo {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    width: 140px;
+    box-shadow: 0 5px 15px #e8c9e8;
+    font-size: 50px;
+}
+
+.photo p {
+    font-size: 14px;
+    color: #a16eaa;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #a17bab;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="cat">🐱💕</div>
+
+<h1>Bestie Forever</h1>
+
+<p class="subtitle">A little website for a beautiful friendship ✨</p>
+
+<div class="names">
+Yashita Bhandari 💗 Rishika Rai
+</div>
+
+<div class="message">
+🌸 <br>
+Some friendships are not about talking every day.
+They are about knowing that someone is always there.
+
+No matter how busy life becomes,
+some people always remain special.
+
+And this little website is a reminder
+that friendship is one of the sweetest gifts of life. 🫶
+<br><br>
+<strong>You're my favourite kind of chaos! 😹💕</strong>
+</div>
+
+<div class="gallery">
+    <div class="photo">🐱<p>Cat Friends</p></div>
+    <div class="photo">🌷<p>Good Vibes</p></div>
+    <div class="photo">🦋<p>Forever Friends</p></div>
+</div>
+
+<button onclick="showMessage()">Click for a Surprise 💌</button>
+
+<div id="secret"></div>
+
+</div>
+
+<footer>
+Made with love & friendship 💕<br>
+Yashita × Rishika ✨
+</footer>
+
+</div>
+
+<script>
+function showMessage() {
+    const messages = [
+        "Rishika, you're an amazing friend! 💗",
+        "Yashita & Rishika = Friendship Goals 🫶",
+        "May our friendship always stay full of laughter! 😂",
+        "Sending you unlimited virtual hugs! 🤗",
+        "You're a precious friend. Never forget that! 🌷",
+        "Bestie vibes only! 🐱💕"
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+    document.getElementById("secret").innerHTML = randomMessage;
+
+    for(let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = ["💗","💕","💖","🌸","✨"][Math.floor(Math.random()*5)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 25 + 15 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }
+}
+</script>
+
+</body>
+</html>
